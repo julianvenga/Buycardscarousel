@@ -133,22 +133,23 @@ export default function App() {
                   </div>
 
                   <motion.div
-                    className="mt-[24px] px-[12px]"
+                    className="mt-[24px] px-[12px] h-[100px]"
                     initial={false}
                     animate={{
                       opacity: position === "center" ? 1 : 0,
+                      filter: position === "center" ? "blur(0px)" : "blur(8px)",
                     }}
                     transition={{
                       duration: 0.3,
                     }}
                   >
                     <div className="flex gap-[12px] items-center justify-center mb-[12px]">
-                      <div className="bg-[#111a29] rounded-full flex items-center justify-center w-[32px] h-[32px]">
+                      <div className="bg-[#111a29] rounded-full flex items-center justify-center w-[32px] h-[32px] flex-shrink-0">
                         <span className="text-white font-['Labil_Grotesk:Bold',sans-serif] text-[16px]">
                           {card.number}
                         </span>
                       </div>
-                      <p className="font-['Labil_Grotesk:Medium',sans-serif] leading-[1.3] text-[#111a29] text-[24px]">
+                      <p className="font-['Labil_Grotesk:Medium',sans-serif] leading-[1.3] text-[#111a29] text-[24px] whitespace-nowrap">
                         {card.title}
                       </p>
                     </div>
